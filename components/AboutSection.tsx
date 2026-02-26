@@ -15,18 +15,21 @@ export default function AboutSection() {
       <div className="site-container">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
-            <div className="relative mx-auto w-full max-w-md">
-              <div className="absolute -left-4 -top-4 h-full w-full border border-accent" />
-              <div className="relative aspect-square overflow-hidden border border-border bg-surface">
-                <Image
-                  src="/cardiac-anes.jpg"
-                  alt="Professional clinical setting"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 34vw"
-                />
-                <div className="absolute inset-0 bg-primary/25" />
-              </div>
+            <div className="relative mx-auto h-[480px] w-full max-w-md overflow-hidden rounded-2xl border-l-[3px] border-accent shadow-[0_24px_80px_rgba(11,31,58,0.20)]">
+              <Image
+                src="/cardiac-anes.jpg"
+                alt="Professional clinical setting"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 34vw"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 rounded-2xl"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(11, 31, 58, 0.45) 100%)",
+                }}
+              />
             </div>
           </Reveal>
 
