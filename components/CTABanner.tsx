@@ -22,7 +22,7 @@ export default function CTABanner() {
             className="mt-10 inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 font-sans text-[0.875rem] font-bold uppercase tracking-[0.04em] text-primary transition-colors duration-300 hover:bg-accent-soft"
             aria-label="Get in touch"
           >
-            Get in Touch {"->"}
+            Get in Touch
           </Link>
         </Reveal>
       </div>

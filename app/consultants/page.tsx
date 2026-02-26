@@ -51,10 +51,10 @@ export default function ConsultantsPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 md:auto-rows-fr">
             {teamMembers.map((member) => (
-              <Reveal key={member.name}>
-                <article className="rounded-xl border border-border bg-white p-9 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:border-accent hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
+              <Reveal key={member.name} className="h-full">
+                <article className="flex h-full flex-col rounded-xl border border-border bg-white p-9 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:border-accent hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
                   <div
                     className="flex h-20 w-20 items-center justify-center rounded-full text-[1.25rem] font-bold text-white"
                     style={{
@@ -73,18 +73,10 @@ export default function ConsultantsPage() {
                     {member.role}
                   </p>
                   <div className="my-4 h-0.5 w-8 bg-accent" aria-hidden="true" />
-                  <p
-                    className="text-[0.9375rem] leading-7 text-text-muted"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 3,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                    }}
-                  >
+                  <p className="flex-1 text-[0.9375rem] leading-7 text-text-muted">
                     {member.bio}
                   </p>
-                  <span className="mt-5 inline-block rounded-[20px] border border-border bg-surface px-[14px] py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-primary">
+                  <span className="mt-5 inline-flex w-fit self-start rounded-[20px] border border-border bg-surface px-[14px] py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-primary">
                     {member.badge}
                   </span>
                 </article>

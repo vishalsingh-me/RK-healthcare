@@ -34,6 +34,8 @@ export default function ContactForm() {
   const [values, setValues] = useState<FormValues>(defaultValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const nextErrors: FormErrors = {};
@@ -63,19 +65,45 @@ export default function ContactForm() {
     return nextErrors;
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextErrors = validate();
     setErrors(nextErrors);
+    setSubmitError(false);
 
     if (Object.keys(nextErrors).length > 0) {
       setIsSubmitted(false);
       return;
     }
 
-    setIsSubmitted(true);
-    setValues(defaultValues);
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const payload = (await response.json()) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.success) {
+        throw new Error("Failed to send email");
+      }
+
+      setIsSubmitted(true);
+      setValues(defaultValues);
+    } catch {
+      setIsSubmitted(false);
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClassName =
@@ -94,7 +122,17 @@ export default function ContactForm() {
           className="border border-accent/70 bg-surface px-4 py-3 text-sm text-primary"
           role="status"
         >
-          Thank you for your enquiry. Our team will respond shortly.
+          Thank you. Your enquiry has been received. We will be in touch within
+          one working day.
+        </div>
+      )}
+      {submitError && (
+        <div
+          className="border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800"
+          role="alert"
+        >
+          Something went wrong. Please try again or email us directly at
+          info@rkhealthcare.co.uk
         </div>
       )}
 
@@ -231,8 +269,13 @@ export default function ContactForm() {
         )}
       </div>
 
-      <button type="submit" className="btn-primary w-full" aria-label="Submit contact form">
-        Submit Enquiry
+      <button
+        type="submit"
+        className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-70"
+        aria-label="Submit contact form"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Submit Enquiry"}
       </button>
     </form>
   );

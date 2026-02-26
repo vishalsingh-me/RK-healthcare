@@ -11,39 +11,69 @@ const credentials = [
   "One Lung Ventilation Course Director",
 ];
 
+const profileStats = [
+  { value: "20+", label: "YEARS EXPERIENCE" },
+  { value: "FRCA", label: "FELLOWSHIP" },
+  { value: "BSE", label: "ACCREDITED" },
+];
+
 export default function ConsultantProfile() {
   return (
     <div className="mx-auto max-w-[1100px] px-6">
       <Reveal>
-        <article className="grid gap-0 overflow-hidden rounded-[12px] border border-border bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex items-center justify-center bg-surface p-8 md:p-10 lg:p-12">
-            <div className="relative aspect-square w-full max-w-[360px] overflow-hidden rounded-full border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.16)]">
+        <article className="mx-auto grid max-w-[960px] grid-cols-1 overflow-hidden rounded-[16px] bg-white shadow-[0_4px_40px_rgba(11,31,58,0.12)] md:grid-cols-[280px_1fr]">
+          <div
+            className="flex flex-col items-center justify-start rounded-t-[16px] px-6 pb-10 pt-10 md:rounded-l-[16px] md:rounded-r-none md:px-8 md:pb-10 md:pt-12"
+            style={{ background: "linear-gradient(170deg, #0B1F3A 0%, #162d4e 100%)" }}
+          >
+            <div
+              className="relative h-[160px] w-[160px] overflow-hidden rounded-full border-[3px] border-accent/60 md:h-[170px] md:w-[170px]"
+              style={{
+                boxShadow:
+                  "0 0 0 5px rgba(184, 150, 110, 0.14), 0 16px 36px rgba(0, 0, 0, 0.35)",
+              }}
+            >
               <Image
                 src="/dr-raj-profile-pic.jpeg"
                 alt="Portrait of Dr. Rajendra Singh"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 80vw, 360px"
+                sizes="(max-width: 768px) 160px, 170px"
               />
+            </div>
+
+            <p className="mt-4 text-center text-[0.9375rem] font-bold text-white">
+              Dr. Rajendra Singh
+            </p>
+            <p className="mt-1 text-center text-[0.625rem] font-semibold uppercase tracking-[0.12em] text-accent">
+              Cardiothoracic Anaesthetist
+            </p>
+
+            <div className="my-6 h-px w-8 bg-[rgba(184,150,110,0.4)]" />
+
+            <div className="flex w-full flex-col gap-5">
+              {profileStats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-[1.125rem] font-extrabold leading-none text-white">
+                    {stat.value}
+                  </p>
+                  <p className="mt-[2px] text-[0.5625rem] font-medium uppercase tracking-[0.14em] text-[rgba(255,255,255,0.45)]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="p-8 md:p-10 lg:p-12">
-            <h2 className="text-[1.625rem] font-bold leading-[1.2] text-primary">
-              Dr. Rajendra Singh
-            </h2>
-            <p className="mt-2 font-sans text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-accent">
-              MB BS | FRCA | BSE ACCREDITED
+          <div className="rounded-b-[16px] bg-white px-6 py-10 md:rounded-b-none md:rounded-r-[16px] md:px-10 md:py-[44px]">
+            <p className="font-sans text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-accent">
+              CONSULTANT CARDIOTHORACIC ANAESTHETIST
             </p>
-            <p className="mt-6 text-lg text-primary">
-              Consultant Cardiothoracic Anaesthetist
-            </p>
+            <div className="mb-6 mt-3 h-0.5 w-8 bg-accent" />
 
-            <div className="mt-6 h-px w-20 bg-accent" />
-
-            <div className="mt-7 space-y-4 text-[0.9375rem] leading-[1.8] text-text-muted">
+            <div className="space-y-4 text-[0.9375rem] leading-[1.8] text-[#4B5563]">
               <p>
-                Dr. Singh is a Consultant Cardiothoracic Anaesthetist at Leeds
+                Dr. Rajendra Kumar Singh is a Consultant Cardiothoracic Anaesthetist at Leeds
                 Teaching Hospitals NHS Trust, where he has practiced for over
                 11 years. He holds the Fellowship of the Royal College of
                 Anaesthetists (FRCA) and a BSE London Accreditation in
@@ -64,11 +94,11 @@ export default function ConsultantProfile() {
               </p>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-7 flex flex-wrap gap-2">
               {credentials.map((credential) => (
                 <span
                   key={credential}
-                  className="rounded-lg border border-accent/60 px-4 py-3 font-sans text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-primary"
+                  className="inline-flex items-center rounded-[6px] border border-border bg-surface px-[14px] py-[6px] font-sans text-[0.6875rem] font-bold uppercase tracking-[0.08em] text-primary"
                 >
                   {credential}
                 </span>

@@ -78,7 +78,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.21, 1, 0.35, 1] }}
-            className="relative h-[26rem] overflow-hidden border border-border sm:h-[32rem] lg:h-[calc(100vh-5rem)]"
+            className="relative my-6 h-[380px] overflow-hidden rounded-2xl border-l-[3px] border-accent shadow-[0_24px_80px_rgba(11,31,58,0.20)] lg:h-[580px]"
           >
             <Image
               src="/cardiac-anes.jpg"
@@ -88,9 +88,15 @@ export default function HeroSection() {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
-            <div className="absolute inset-0 bg-primary/45" />
-            <div className="absolute bottom-0 left-0 right-0 border-t border-white/20 bg-primary/70 px-6 py-5 backdrop-blur-sm">
-              <p className="font-sans text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-white/75">
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(11, 31, 58, 0.75) 100%)",
+              }}
+            />
+            <div className="absolute bottom-0 left-0 px-6 py-5">
+              <p className="font-sans text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
                 Consultant-led private anaesthetic care
               </p>
             </div>
