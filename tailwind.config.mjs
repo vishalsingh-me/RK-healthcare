@@ -1,50 +1,48 @@
 /** @type {import('tailwindcss').Config} */
 import typography from "@tailwindcss/typography";
 
-export default {
+const config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#EA580C",
-          dark: "#C2410C",
-          hover: "#D97706",
-        },
-        secondary: {
-          DEFAULT: "#9A3412",
-          light: "#EA580C",
+          DEFAULT: "#0B1F3A",
+          dark: "#08162B",
         },
         accent: {
-          DEFAULT: "#EA580C",
-          light: "#FB923C",
+          DEFAULT: "#B8966E",
+          soft: "#C8AA84",
         },
+        surface: "#F7F5F2",
         text: {
-          DEFAULT: "#1f2937",
-          light: "#6b7280",
+          DEFAULT: "#1A1A1A",
+          muted: "#6B7280",
         },
-        background: "#ffffff",
-        "light-bg": "#f9fafb",
-        border: "#e5e7eb",
+        border: "#E5E0D8",
+        white: "#FFFFFF",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["var(--font-primary)", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        card: "0 14px 38px -30px rgba(11, 31, 58, 0.35)",
+        soft: "0 20px 52px -38px rgba(11, 31, 58, 0.45)",
       },
       container: {
         center: true,
-        padding: "1rem",
-        screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1280px",
+        padding: {
+          DEFAULT: "1.5rem",
+          lg: "3rem",
         },
       },
     },
   },
   plugins: [typography],
 };
+
+export default config;
