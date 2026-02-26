@@ -22,14 +22,14 @@ const teamMembers = [
 export default function ConsultantsPage() {
   return (
     <>
-      <section className="border-b border-border bg-white pb-20 pt-12">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-24">
-          <Reveal className="max-w-3xl">
+      <section className="bg-primary pb-20 pt-[120px]">
+        <div className="site-container">
+          <Reveal className="max-w-[800px]">
             <span className="section-label">Our Consultants</span>
-            <h1 className="heading-h1 mt-6 text-primary">
+            <h1 className="heading-h1 mt-6 text-white">
               Meet the Specialist Behind Your Care
             </h1>
-            <p className="mt-6 text-base leading-7 text-text-muted">
+            <p className="mt-6 max-w-[560px] text-[1.0625rem] leading-[1.75] text-white/70">
               RK Healthcare is led by one of the UK&apos;s most experienced
               cardiothoracic anaesthetists, delivering consultant-level
               expertise from pre-operative planning to post-operative care.
@@ -38,7 +38,7 @@ export default function ConsultantsPage() {
         </div>
       </section>
 
-      <section className="mt-8 border-t border-border bg-surface pb-24 pt-20">
+      <section className="bg-surface pb-24 pt-20">
         <ConsultantProfile />
       </section>
 

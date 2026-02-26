@@ -13,14 +13,14 @@ const chargeRows = [
 export default function OurChargesPage() {
   return (
     <>
-      <section className="border-b border-border bg-white py-20">
+      <section className="bg-primary pb-20 pt-[120px]">
         <div className="site-container">
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-[800px]">
             <span className="section-label">Our Charges</span>
-            <h1 className="heading-h1 mt-6 text-primary">
+            <h1 className="heading-h1 mt-6 text-white">
               Transparent Consultant Fees
             </h1>
-            <p className="mt-6 text-base leading-7 text-text-muted">
+            <p className="mt-6 max-w-[560px] text-[1.0625rem] leading-[1.75] text-white/70">
               We provide clear and transparent fee guidance for private
               anaesthetic care. A personalised estimate is issued after your
               initial consultation and procedural review.
@@ -29,7 +29,7 @@ export default function OurChargesPage() {
         </div>
       </section>
 
-      <section className="mt-8 border-t border-border bg-surface py-20">
+      <section className="bg-surface py-20">
         <div className="site-container">
           <Reveal className="mx-auto max-w-4xl border border-border bg-white">
             {chargeRows.map((row) => (

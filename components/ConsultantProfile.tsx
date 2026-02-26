@@ -15,16 +15,17 @@ export default function ConsultantProfile() {
   return (
     <div className="mx-auto max-w-[1100px] px-6">
       <Reveal>
-        <article className="grid gap-0 overflow-hidden rounded-[12px] border border-border bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="relative min-h-[26rem] lg:min-h-[34rem]">
-            <Image
-              src="/cardiac-anes.jpg"
-              alt="Dr. Rajendra Singh in a clinical environment"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 45vw"
-            />
-            <div className="absolute inset-0 bg-primary/25" />
+        <article className="grid gap-0 overflow-hidden rounded-[12px] border border-border bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex items-center justify-center bg-surface p-8 md:p-10 lg:p-12">
+            <div className="relative aspect-square w-full max-w-[360px] overflow-hidden rounded-full border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.16)]">
+              <Image
+                src="/dr-raj-profile-pic.jpeg"
+                alt="Portrait of Dr. Rajendra Singh"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 80vw, 360px"
+              />
+            </div>
           </div>
 
           <div className="p-8 md:p-10 lg:p-12">

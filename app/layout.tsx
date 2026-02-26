@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   },
   description:
     "Private consultant-led cardiothoracic anaesthetic care by Dr. Rajendra Singh in Leeds, UK.",
+  icons: {
+    icon: "/rk-monogram-favicon-v2.png",
+    shortcut: "/rk-monogram-favicon-v2.png",
+    apple: "/rk-monogram-favicon-v2.png",
+  },
 };
 
 export default function RootLayout({

@@ -32,23 +32,25 @@ const faqItems = [
 export default function PatientInformationPage() {
   return (
     <>
-      <section className="border-b border-border bg-white py-20">
+      <section className="bg-primary pb-20 pt-[120px]">
         <div className="site-container">
-          <Reveal className="max-w-3xl">
+          <Reveal className="max-w-[800px]">
             <span className="section-label">Patient Information</span>
-            <h1 className="heading-h1 mt-6 text-primary">
+            <h1 className="heading-h1 mt-6 text-white">
               Preparing for Anaesthesia with Confidence
             </h1>
-            <p className="mt-6 text-base leading-7 text-text-muted">
+            <p className="mt-6 max-w-[560px] text-[1.0625rem] leading-[1.75] text-white/70">
               Clear guidance from consultation to recovery, designed to help you
               feel informed, reassured, and fully prepared for your procedure.
             </p>
-            <div className="mt-6 border border-border bg-surface px-4 py-3">
-              <p className="text-sm leading-7 text-text-muted">
-                This information is provided as a resource for patients referred
-                to Dr. Singh via their surgeon or GP. To make a referral, please
-                use our professional enquiry form.
-              </p>
+            <div className="mt-8 rounded-lg border border-white/25 bg-white/95 p-5 shadow-soft">
+              <div className="border-l-2 border-accent pl-4">
+                <p className="text-[0.9375rem] leading-8 text-text-muted">
+                  This information is provided as a resource for patients
+                  referred to Dr. Singh via their surgeon or GP. To make a
+                  referral, please use our professional enquiry form.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
