@@ -47,7 +47,7 @@ export default function ContactUsPage() {
                         href="tel:+441133000000"
                         className="transition-colors duration-300 hover:text-accent"
                       >
-                        +44 (0)113 300 0000
+                        +44 113 300 0000
                       </a>
                     </p>
                   </div>
